@@ -2,6 +2,7 @@ import pytest
 from quickfind import QuickFind
 from quickunion import QuickUnion
 from weightedquickunion import WeightedQuickUnion
+from wqupathcompression import WQUPathCompression
 
 #
 # Test for Quick Find data structure
@@ -86,9 +87,39 @@ def test_wqu_connected():
 	assert wqu.connected(4, 5) == True
 	assert wqu.connected(6, 7) == True
 	
-def test_qu_not_connected():	
+def test_wqu_not_connected():	
 	wqu = make_wqu_10()
 	assert wqu.connected(1, 2) == False
 	assert wqu.connected(3, 4) == False
 	assert wqu.connected(5, 6) == False
 	assert wqu.connected(7, 8) == False		
+
+#
+# Test for Weighted Quick Union with Path Compression data structure
+#
+def make_wqupc_10():
+	wqupc = WQUPathCompression(10)	
+	wqupc.union(0, 1)
+	wqupc.union(2, 3)
+	wqupc.union(4, 5)
+	wqupc.union(6, 7)
+	wqupc.union(8, 9)
+	return wqupc	
+
+def test_wqupc_state():
+	wqupc = make_wqupc_10()
+	assert wqupc.parent == [0, 0, 2, 2, 4, 4, 6, 6, 8, 8]
+
+def test_wqupc_connected():
+	wqupc = make_wqupc_10()
+	assert wqupc.connected(0, 1) == True
+	assert wqupc.connected(2, 3) == True
+	assert wqupc.connected(4, 5) == True
+	assert wqupc.connected(6, 7) == True
+	
+def test_wqupc_not_connected():	
+	wqupc = make_wqupc_10()
+	assert wqupc.connected(1, 2) == False
+	assert wqupc.connected(3, 4) == False
+	assert wqupc.connected(5, 6) == False
+	assert wqupc.connected(7, 8) == False			
