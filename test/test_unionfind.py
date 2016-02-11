@@ -1,8 +1,8 @@
 import pytest
-from quickfind import QuickFind
-from quickunion import QuickUnion
-from weightedquickunion import WeightedQuickUnion
-from wqupathcompression import WQUPathCompression
+from unionfind.quickfind import QuickFind
+from unionfind.quickunion import QuickUnion
+from unionfind.weightedquickunion import WeightedQuickUnion
+from unionfind.wqupathcompression import WQUPathCompression
 
 #
 # Test for Quick Find data structure
