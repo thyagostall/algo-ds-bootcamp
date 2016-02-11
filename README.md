@@ -1,6 +1,6 @@
-# algo-ds-bootcamp
+# Algorithms and Data Structures
 
-Some implementation of the most common algorithms and data structures. _Work in progress_
+Implementations of the most common Algorithms and Data Structures used in Computer Science. _Currently, the project is being based on the [Algorithms 4th Edition](http://algs4.cs.princeton.edu/home/) book_
 
 ## Sorting
 
