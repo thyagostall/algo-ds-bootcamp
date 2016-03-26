@@ -1,7 +1,7 @@
 #include "UnionFind.h"
 
 UnionFind::UnionFind(int size): parents(size) {
-	// parents = new vector{size};
+	connectedComponents = size;
 	for (int i = 0; i < size; i++) {
 		parents[i] = i;
 	}
@@ -12,5 +12,5 @@ bool UnionFind::connected(int p, int q) {
 }
 
 int UnionFind::count() {
-	return parents.size();
+	return connectedComponents;
 }

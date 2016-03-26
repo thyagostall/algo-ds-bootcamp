@@ -4,7 +4,8 @@
 #include <vector>
 
 class UnionFind {
-private:
+protected:
+	int connectedComponents;
 	std::vector<int> parents;
 public:
 	UnionFind(int);
