@@ -7,6 +7,6 @@ using namespace std;
 int main() {
 	QuickUnion qu {10};
 
-	cout << "Hello World" << endl;
-	// cout << qu.count();
+	cout << "Count: ";
+	cout << qu.count() << endl;
 }

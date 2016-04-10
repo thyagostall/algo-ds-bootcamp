@@ -1,11 +1,11 @@
-#ifndef QUICKUNION_H
-#define QUICKUNION_H
+#ifndef QUICKFIND_H
+#define QUICKFIND_H
 
 #include "UnionFind.h"
 
-class QuickUnion: public UnionFind {
+class QuickFind: public UnionFind {
 public:
-	QuickUnion(int);
+	QuickFind(int);
 
 	virtual void connect(int, int) override;
 	virtual int find(int) override;

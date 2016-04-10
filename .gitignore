@@ -4,3 +4,4 @@ old_python_code/
 .DS_Store
 
 *.o
+*.out

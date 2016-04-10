@@ -2,7 +2,7 @@ CC = g++
 CFLAGS = -std=c++11 -Wall -c
 LFLAGS = -std=c++11 -Wall
 DEBUG = -g
-OBJS = main.o unionfind/UnionFind.o unionfind/QuickUnion.o
+OBJS = main.o QuickFind.o QuickUnion.o UnionFind.o WeightedQuickUnion.o
 
 a.out: $(OBJS)
 	$(CC) $(LFLAGS) $(OBJS) $(DEBUG)
@@ -10,8 +10,14 @@ a.out: $(OBJS)
 main.o: main.cpp
 	$(CC) $(CFLAGS) main.cpp $(DEBUG)
 
-unionfind/QuickUnion.o: unionfind/UnionFind.h unionfind/QuickUnion.h unionfind/QuickUnion.cpp
+QuickUnion.o: unionfind/UnionFind.h unionfind/QuickUnion.h unionfind/QuickUnion.cpp
 	$(CC) $(CFLAGS) unionfind/QuickUnion.cpp $(DEBUG)
 
-unionfind/UnionFind.o: unionfind/UnionFind.h unionfind/UnionFind.cpp
+QuickFind.o: unionfind/UnionFind.h unionfind/QuickFind.h unionfind/QuickFind.cpp
+	$(CC) $(CFLAGS) unionfind/QuickFind.cpp $(DEBUG)
+
+WeightedQuickUnion.o: unionfind/UnionFind.h unionfind/WeightedQuickUnion.h unionfind/WeightedQuickUnion.cpp
+	$(CC) $(CFLAGS) unionfind/WeightedQuickUnion.cpp $(DEBUG)	
+
+UnionFind.o: unionfind/UnionFind.h unionfind/UnionFind.cpp
 	$(CC) $(CFLAGS) unionfind/UnionFind.cpp $(DEBUG)
